@@ -17,13 +17,12 @@ public class Main {
         Scanner numberPayments = new Scanner(System.in);
         System.out.println("Введите количество трат за месяц ");
         int size = numberPayments.nextInt();
-        int payment[] = new int[size];
+        int payments[] = new int[size];
         System.out.println("Введите суммы трат: ");
         int sum = 0;
-        for (int i : payment) {
-            i++;
-            payment[i] = numberPayments.nextInt();
-            sum += payment[i];
+        for (int i = 0; i < payments.length; i++) {
+            payments[i] = numberPayments.nextInt();
+            sum += payments[i];
         }
         System.out.println("Cумма трат за месяц =  " + sum);
 
@@ -37,14 +36,13 @@ public class Main {
         int wastes[] = new int[numberWastes];
         System.out.println("Введите суммы трат: ");
         int max = wastes[0];
-        int min = wastes[0];
+        int min = wastes[1];
         for (int i : wastes) {
             wastes[i] = minMaxWastes.nextInt();
             if (wastes[i] > max) {
                 max = wastes[i];
-
             }
-            if (wastes[i] < max & wastes[i] != 0) {
+            if (wastes[i] < max) {
                 min = wastes[i];
             }
         }
